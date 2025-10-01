@@ -1,0 +1,20 @@
+# /etc/systemd/system/orbi.service
+[Unit]
+Description=Orbi Face
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/arojit/Documents/Orbi/face_v1.py
+WorkingDirectory=/home/arojit
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=arojit
+
+[Install]
+WantedBy=multi-user.target
+
+# Commands -
+#  sudo systemctl daemon-reload
+#  sudo systemctl enable orbi
+#  sudo systemctl start orbi
